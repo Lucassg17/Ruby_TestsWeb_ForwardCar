@@ -1,5 +1,8 @@
+require_relative '../utils/excel.rb'
+
 class PageObject < SitePrism::Page
-  element :guest, '.ng-scope'
+  set_url('/')
+  element :guest, :xpath, '/html/body/div[1]/div[1]/div/div/div[2]/ul/li[5]/a/span[1]'
   element :btn_tela_login, :xpath, '/html/body/div[1]/div[1]/div/div/div[2]/ul/li[5]/ul/li[1]/a'
   element :btn_tela_register, :xpath, '/html/body/div[1]/div[1]/div/div/div[2]/ul/li[5]/ul/li[2]/a'
   element :first_name_tela_register, :xpath, '//*[@id="registration-form"]/fieldset/div[1]/input'
@@ -18,16 +21,14 @@ class PageObject < SitePrism::Page
     password_tela_login.send_keys()
     sleep(5)
     btn_login.click
-    sleep(5)
   end
 
-  def criar_registro
-    first_name_tela_register.send_keys()
-    last_name_tela_register.send_keys()
-    username_tela_register.send_keys()
-    password_tela_register.send_keys()
-    sleep(5)
-    btn_register.click
-    sleep(5)
-  end
+  # def criar_registro(f_name, l_name, u_name, password)
+  #   first_name_tela_register.send_keys(f_name)
+  #   last_name_tela_register.send_keys(l_name)
+  #   username_tela_register.send_keys(u_name)
+  #   password_tela_register.send_keys(password)
+  #   sleep(3)
+  #   btn_register.click
+  # end
 end

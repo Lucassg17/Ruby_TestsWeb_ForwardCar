@@ -13,6 +13,6 @@ World(PageObjects)
 
 Capybara.configure do |config|
   config.default_driver = :selenium_chrome
-  config.app_host = 'http://localhost:3434/cars-app/#/home'
+  config.app_host = 'http://localhost:3434/cars-app'
   config.default_max_wait_time = 5
 end
