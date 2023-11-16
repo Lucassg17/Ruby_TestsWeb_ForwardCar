@@ -4,8 +4,4 @@ module PageObjects
   def home
     @home ||= PageObject.new
   end
-
-  # def products
-  #   @products ||= Prod_Objects.new
-  # end
 end

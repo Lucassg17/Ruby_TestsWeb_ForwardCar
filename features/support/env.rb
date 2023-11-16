@@ -8,6 +8,7 @@ require 'rspec'
 require 'rspec/expectations'
 require_relative 'mapa_de_elementos'
 require 'roo'
+require 'pry'
 
 World(PageObjects)
 

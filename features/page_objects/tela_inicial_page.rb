@@ -1,5 +1,3 @@
-require_relative '../utils/excel.rb'
-
 class PageObject < SitePrism::Page
   set_url('/')
   element :guest, :xpath, '/html/body/div[1]/div[1]/div/div/div[2]/ul/li[5]/a/span[1]'
@@ -13,22 +11,25 @@ class PageObject < SitePrism::Page
   element :btn_have_an_account, :xpath, '//*[@id="registration-form"]/fieldset/div[6]/div/div/a'
   element :username_tela_login, :xpath, '//*[@id="login-form"]/fieldset/div[1]/input'
   element :password_tela_login, :xpath, '//*[@id="login-form"]/fieldset/div[2]/input'
-  element :btn_login, :xpath, '//*[@id="login-form"]/fieldset/div[2]/input'
+  element :btn_login, :xpath, '//*[@id="login-form"]/fieldset/div[3]/button'
   element :btn_dont_have_an_account, :xpath, '//*[@id="login-form"]/fieldset/div[4]/div/div/a'
 
-  def realizar_login
-    username_tela_login.send_keys()
-    password_tela_login.send_keys()
-    sleep(5)
-    btn_login.click
-  end
-
-  # def criar_registro(f_name, l_name, u_name, password)
-  #   first_name_tela_register.send_keys(f_name)
-  #   last_name_tela_register.send_keys(l_name)
-  #   username_tela_register.send_keys(u_name)
-  #   password_tela_register.send_keys(password)
-  #   sleep(3)
-  #   btn_register.click
-  # end
+  ######################### tela de usuário logado #########################
+  element :btn_autenc_user, :xpath, '/html/body/div[1]/div[1]/div/div/div[2]/ul/li[5]/a/span[1]'
+  element :btn_logout, :xpath, '/html/body/div[1]/div[1]/div/div/div[2]/ul/li[5]/ul/li[4]/a'
+  element :btn_loan_status, :xpath, '/html/body/div[1]/div[1]/div/div/div[2]/ul/li[5]/ul/li[3]/a'
+  element :btn_search, :xpath, '/html/body/div[1]/div[1]/div/div/div[2]/ul/li[2]/a'
+  element :make_marca_carro, :xpath, '/html/body/div[1]/div[2]/div/div/div/div/div[2]/div[3]/a[1]'
+  element :marca_acura, :xpath, '/html/body/div[1]/div[2]/div/div/div/div/div[2]/div[3]/a[2]'
+  element :marca_audi, :xpath, '/html/body/div[1]/div[2]/div/div/div/div/div[2]/div[3]/a[3]'
+  element :carro_acura, :xpath, '/html/body/div[1]/div[2]/div/div/div/div/div[3]/div[1]/div/div[1]/div/nobr'
+  element :camp_search_dados, :xpath, '/html/body/div[1]/div[2]/div/div/div/div/div[2]/div[2]/a[2]/label/input'
+  element :btn_clear_search, :xpath, '/html/body/div[1]/div[2]/div/div/div/div/div[2]/div[2]/a[2]/button'
+  element :view_details_first_car_black, :xpath, '/html/body/div[1]/div[2]/div/div/div/div/div[3]/div[1]/div/div[3]/button[1]'
+  element :view_details_car_red, :xpath, '/html/body/div[1]/div[2]/div/div/div/div/div[3]/div/div/div[3]/button[1]'
+  element :color_black, :xpath, '/html/body/div[4]/div/div/div/div[2]/table/tbody/tr[5]/td[2]'
+  element :color_red, :xpath, '/html/body/div[4]/div/div/div/div[2]/table/tbody/tr[5]/td[2]'
+  element :btn_ok, :xpath, '/html/body/div[4]/div/div/div/div[3]/button[3]'
+  element :name_first_car_acura, :xpath, '/html/body/div[1]/div[2]/div/div/div/div/div[3]/div[1]/div/div[1]/div/nobr'
+  element :name_first_car_bmw, :xpath, '/html/body/div[1]/div[2]/div/div/div/div/div[3]/div[1]/div/div[1]/div/nobr'
 end
